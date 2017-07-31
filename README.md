@@ -1,3 +1,2 @@
-# Das ist mein VWA-Repository
-
-# und noch eine Überschrift - ganz sinnvoll
+# VWA-Vorlage Repository
+Dieses Repository beinhaltet eine Vorlage für eine LaTeX-VWA-Vorlage.
