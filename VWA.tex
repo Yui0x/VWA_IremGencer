@@ -1,0 +1,97 @@
+\documentclass[FinalThesis]{Deckblatt}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{forest}
+\usepackage{bm}
+\usepackage{algorithm}
+\usepackage{listings}
+\usepackage[noend]{algpseudocode}
+\setcounter{secnumdepth}{4}
+
+\newboolean{betreuerFemale}
+\setboolean{betreuerFemale}{false}
+
+\schule{BG/BRG Wien 10, Pichelmayergasse 1, 1100 Wien}
+\schullogo{figures/BRG_10_Logo.png}
+
+\gdef\name{DEIN NAME}
+\myDate{\today}
+\klasse{DEINE KLASSE}
+\author{\name}
+\gdef\titelDerArbeit{DEIN TITEL}
+\gdef\subTitelDerAbeit{DEIN UNTERTITEL}
+\title{\titelDerArbeit}
+\subtitle{\subTitelDerAbeit}
+\submitdate{DEIN ABGABEDATUM}
+\supervisor{Prof. DI Mag. Rainer Amler}
+\schuljahr{Haupttermin 2017/18}
+\date{\@myDate}
+\gdef\ort{Wien}
+\newcommand \useAuthor{\name, \titelDerArbeit}
+
+\lstset{
+  literate={ö}{{\"o}}1
+           {ä}{{\"a}}1
+           {ü}{{\"u}}1
+}
+
+\lstset{
+  language=Python,
+  showstringspaces=false,
+  formfeed=\newpage,
+  tabsize=4,
+  commentstyle=\itshape,
+  basicstyle=\ttfamily,
+  morekeywords={models, lambda, forms},
+  numbersep=0pt
+}
+
+\newcommand{\code}[2]{
+  \hrulefill
+  \subsection*{#1}
+  \lstinputlisting{#2}
+  \vspace{2em}
+}
+
+\usepackage{scrlayer-scrpage}
+
+\refoot[\name, \titelDerArbeit]
+{\name, \titelDerArbeit}
+\lofoot[\name, \titelDerArbeit]
+{\name, \titelDerArbeit}
+\pagestyle{scrheadings}
+
+\bibliography{Quellen}{}
+\begin{document}
+\maketitle
+\pagenumbering{arabic}
+\pagestyle{plain}
+\renewcommand*{\abstractname}{\Large Abstract}
+
+\begin{abstract}
+DEIN ABSTRACT
+\end{abstract}
+
+\chapter*{Danksagung}
+DEINE DANKSAGUNG
+
+\tableofcontents
+\input{Einleitung}
+\input{Resuemee}
+\printbibliography
+\listoffigures
+\listoftables
+{\let\cleardoublepage\relax \chapter*{Abkürzungsverzeichnis}}
+% Eintr\"age f\"ur das Abk\"urzungsverzeichnis/Glossar
+\textbf{White-Hat}\dotfill verwendet sein Wissen sowohl innerhalb der Gesetze als auch innerhalb der Hackerethik\\
+\textbf{Grey-Hat}\dotfill verstößt womöglich gegen geltende Gesetze oder restriktive Auslegung der Hackerethik\\
+\appendix
+\input{Anhang}
+
+\printAuthor
+\end{document}
