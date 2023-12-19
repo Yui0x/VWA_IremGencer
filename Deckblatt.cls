@@ -3,7 +3,6 @@
 \LoadClass[a4paper,
 ngerman,
 openright,
-abstracton,
 12pt]
 {scrreprt}
 
@@ -23,7 +22,7 @@ abstracton,
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \linespread {1.25}
-\RequirePackage{times}
+\RequirePackage{mathptmx}
 \RequirePackage{calc}
 \RequirePackage{url}
 \RequirePackage[ngerman]{babel}
@@ -33,10 +32,23 @@ abstracton,
 \usepackage{makeidx}
 \usepackage{multirow}
 
-\usepackage{varioref} % 1.
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{forest}
+\usepackage{bm}
+\usepackage{algorithm}
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{csvsimple}
+\usepackage[noend]{algpseudocode}
+
+\usepackage[ngerman]{varioref} % 1.
 \usepackage{hyperref}% 2.
 \usepackage[ngerman]{cleveref}% 3.
-\usepackage{listings}
 
 \usepackage[babel, german=quotes]{csquotes}
 \usepackage[authordate,backend=biber]{biblatex-chicago}
@@ -67,7 +79,7 @@ abstracton,
 \renewcommand{\contentsname}{\fontsize{14pt}{16pt}\selectfont\bf Table of Contents:}
 
 \setlength{\parindent}{0mm}
-\setlength{\parskip}{5mm}
+\setlength{\parskip}{8pt}
 
 % Page number
 \usepackage{scrlayer-scrpage}
@@ -116,16 +128,4 @@ abstracton,
 	\multicolumn{2}{l}\@schuljahr \\
 	Eingereicht am \@submitdate \\
 \end{tabular}
-}
-
-\newcommand{\printAuthor}{
-\section*{Eidesstattliche Erklärung}
-Ich erkläre, dass ich diese vorwissenschaftliche Arbeit eigenständig angefertigt und nur
-die im Literaturverzeichnis angeführten Quellen und Hilfsmittel
-benutzt habe.
-
-\vspace{4cm}
-\parbox{5cm}{\centering \ort, \@myDate \hrule
-\strut \centering\footnotesize Ort, Datum} \hfill\parbox{4cm}{\hrule
-\strut \centering\footnotesize \name }
 }

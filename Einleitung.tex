@@ -1,12 +1,135 @@
 \chapter*{Einleitung}
 \label{cha:einleitung}
 % deine Einleitung
+An dieser Stelle soll eine Einführung in das Thema erfolgen.
+
+In der Einleitung wird kurz das Thema vorgestellt, Inhalt und Aufbau der Arbeit umrissen. Man beschreibt die Ausgangslage und Problemstellung und grenzt das Thema ein. An dieser Stelle soll auch die konkrete Forschungsfrage, die im Rahmen der VWA beantwortet werden soll, präsentiert werden. Damit einhergehend sollen auch die Arbeitsschritte/die angewandte Methodik, mit der die Forschungsfrage beantwortet werden soll, erläutert werden. Es muss deutlich erkennbar sein, worum es in deiner VWA geht und wie du dich dem Thema genähert hast.
+
+Die Einleitung sollte nicht mehr 15\% des Gesamttextes ausmachen (max. eine Seite!). Wichtig: Die Einleitung ist deine Visitenkarte! Du solltest sie daher vor der Abgabe genau überarbeiten und korrigieren!
+
+\section{Einführung \LaTeX}
+\label{sec:einfuehrung_latex}
+
+\subsection{Überschriften einfügen}
+\label{subsec:ueberschrift_einfuegen}
+In \LaTeX werden Gliederungsebenen wie folgt erstellt:
+
+\begin{itemize}
+	\item Kapitel mit \textbackslash chapter\{title\}
+	\item Überschrift2 mit \textbackslash section\{title\}
+	\item Überschrift3 mit \textbackslash subsection\{title\}
+\end{itemize}
+
+Es empfiehlt sich zu jedem Kapitel bzw. Überschrift ein Label mit \textbackslash label\{key\} zu vergeben.
+
+Hier ein vollständisches Beispiel:
+
+\begin{verbatim}
+	\chapter{title}
+	\label{cha:title}
+\end{verbatim}
+
+\subsection{Zitate}
+\label{subsec:zitate}
+
+Man unterscheidet zwischen Kurz- und Langzitaten. 
+
+Die ausführliche Variante hat nur beim ersten Mal zu erfolgen (oder man macht von Anfang an nur Kurzbelege).
+Bei unmittelbar aufeinander folgenden Verweisen auf die gleiche Quelle kann ab der zweiten Nennung auch „ebd.“ (für „ebenda“) verwendet werden.
+
+Verweist ein Beleg auf zwei Seiten im Originaltext, so fügt man der Seitenzahl ein „f.“ (für „folgende“) an, bei mehr als zwei Seiten ein „ff.“ oder auch die genaue Seitenangabe (S. 18–25).
+
+Niemand beginnt bei einer wissenschaftlichen Arbeit bei null, jede (vor)wissenschaftliche Arbeit beruht auf anderen wissenschaftlichen Werken. Dabei gilt: Jede Übernahme von Erkenntnissen aus der Literatur ist auszuweisen und zu belegen, Zitate sind als solche zu kennzeichnen. Geschieht dies nicht, vergreift man sich am geistigen Eigentum eines anderen und begeht ein > Plagiat.
+
+Informationen stammen aus dem Dokument 02-VWA-Richtig-zitieren.pdf von vwa-ahs.at.
+
+Fußnoten kann man mit \textbackslash footnote\{Der Inhalt der Fußnote\}\footnote{Ich bin eine Fußnote} erstellen.
+
+Erklärungen in den Fußnoten würde ICH (obliegt dem Betreuungslehrer) bei den Zeichen dazu zählen, Literaturbelege eher nicht.
+
+Nach Möglichkeit Kapitel kürzen, damit es auf einer Seite endet, bzw. leere Zeilen oder manuellen Seitenumbruch einfügen, damit ein neues Hauptkapitel auf der nächsten Seite beginnt!
+
 Hier ein Beispiel f\"ur ein Zitat. \autocite[8\psq]{bookEvOpt} % wird zu 8 f.
 
 Hier ein Beispiel f\"ur ein Zitat. \autocite[8\psqq]{bookEvOpt} % wird zu 8 ff.
 
 Hier ein Beispiel f\"ur ein Zitat. \autocite[8]{bookEvOpt} % wird zu 8
 
+\subsection{Lang- bzw. Kurzzitate}
+\label{subsec:lang_kurz_zitate}
+
+\textbf{Kurzzitat}
+
+\textquote{Die Realität ist eine Illusion, die durch einen Mangel an Kaffee entsteht.} \hfill --- Unbekannt
+
+\textbf{Langzitat}
+
+\begin{quotation}
+	Ich liebe es, morgens aufzuwachen und nicht zu wissen, was passieren wird, oder wen ich treffen werde, wohin der Wind mich treibt. Ich finde es einfach aufregend, nicht zu wissen. Das ist es, was das Leben spannend macht: das Unerwartete, das Unbekannte. Manchmal muss man nur mutig genug sein, die Tür zu öffnen und hinauszugehen.
+\end{quotation}
+\hfill --- Unbekannt
+
+\subsection{Verweise}
+\label{subsec:verweise}
+
 Hier noch ein Verweis auf \cref{cha:final} % Cleverref
 
 Hier noch ein Verweis auf \vref{cha:final} % Varioref
+
+\section{Bilder inkl. Beschriftung und Quellenangabe}
+\label{sec:images}
+
+In dem Bild „Logo Pichelmayergasse“ \vref{fig:meinbild} kann man das Logo der Pichelmayergasse erkennen. Es handelt sich um ein Beispielbild.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.2\textwidth]{figures/BRG_10_Logo.png} % Pfad zu Ihrem Bild
+	\caption[Bildbeschriftung im Abbildungsverzeichnis]{Bildbeschriftung\protect\footnotemark}
+	\label{fig:meinbild}
+\end{figure}
+\footnotetext{Quelle: \autocite[ganz oben]{knallgelb}}
+
+\section{Aufzählungen}
+\label{sec:aufzaehlungen}
+
+Im Source Code steht ein Beispiel für Aufzählungen.
+
+Hier ist eine Aufzählung mit drei Punkten:
+\begin{itemize}
+	\item Das erste Item.
+	\item Das zweite Item.
+	\item Das dritte Item.
+\end{itemize}
+
+
+\section{Tabellen}
+\label{sec:tabellen}
+
+Tabellen kann man entweder in eine \LaTeX Tabelle konvertieren \newline(Online-Konverter: \href[]{https://www.tablesgenerator.com/}{www.tablesgenerator.com}), oder als CSV-Datei einbinden.
+
+
+\textbf{Im \LaTeX Format}:
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|l|c|r|} % l = linksbündig, c = zentriert, r = rechtsbündig
+		\hline
+		Links & Mitte & Rechts \\ \hline
+		Apfel & Birne & Kirsche \\ 
+		Hund & Katze & Maus \\
+		\hline
+	\end{tabular}
+	\caption{Beispieltabelle mit Früchten und Tieren\protect\footnotemark}
+	\label{tab:meinetabelle}
+\end{table}
+\footnotetext{Quelle: ChatGPT}
+
+\textbf{Als CSV-Datei:}
+
+\begin{table}[ht]
+	\centering
+	\csvautotabular{figures/Beispieltabelle.csv}
+	\caption{Beispieltabelle mit Früchten und Tieren\protect\footnotemark}
+	\label{tab:alsCSV}
+\end{table}
+\footnotetext{Quelle: ChatGPT}

@@ -1,16 +1,5 @@
 \documentclass[FinalThesis]{Deckblatt}
 
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{caption}
-\usepackage{tikz}
-\usepackage{pgfplots}
-\usepackage{forest}
-\usepackage{bm}
-\usepackage{algorithm}
-\usepackage{listings}
-\usepackage[noend]{algpseudocode}
 \setcounter{secnumdepth}{4}
 
 \newboolean{betreuerFemale}
@@ -29,7 +18,7 @@
 \subtitle{\subTitelDerAbeit}
 \submitdate{DEIN ABGABEDATUM}
 \supervisor{Prof. DI Mag. Rainer Amler}
-\schuljahr{Haupttermin 2017/18}
+\schuljahr{Haupttermin 2024/25}
 \date{\@myDate}
 \gdef\ort{Wien}
 \newcommand \useAuthor{\name, \titelDerArbeit}
@@ -72,28 +61,29 @@
 \begin{document}
 \maketitle
 \pagenumbering{arabic}
-\pagestyle{plain}
+\pagestyle{empty}
 \renewcommand*{\abstractname}{\Large Abstract}
 
-\begin{abstract}
-DEIN ABSTRACT
-\end{abstract}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
 
-\chapter*{Danksagung}
-DEINE DANKSAGUNG
+\include{eidesstattliche_erklaerung}
 
+\include{abstract}
+
+\include{Vorwort}
+\setcounter{page}{1}
 \tableofcontents
 \input{Einleitung}
+\include{Hauptteil}
 \input{Resuemee}
 \printbibliography
 \listoffigures
 \listoftables
-{\let\cleardoublepage\relax \chapter*{Abkürzungsverzeichnis}}
-% Eintr\"age f\"ur das Abk\"urzungsverzeichnis/Glossar
-\textbf{White-Hat}\dotfill verwendet sein Wissen sowohl innerhalb der Gesetze als auch innerhalb der Hackerethik\\
-\textbf{Grey-Hat}\dotfill verstößt womöglich gegen geltende Gesetze oder restriktive Auslegung der Hackerethik\\
+\include{abkuerzungsverzeichnis}
 \appendix
 \input{Anhang}
 
-%\printAuthor
 \end{document}
