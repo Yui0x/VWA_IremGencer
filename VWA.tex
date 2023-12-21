@@ -49,12 +49,6 @@
 
 \usepackage{scrlayer-scrpage}
 
-\refoot[\name, \titelDerArbeit]
-{\name, \titelDerArbeit}
-\lofoot[\name, \titelDerArbeit]
-{\name, \titelDerArbeit}
-\pagestyle{scrheadings}
-
 \usepackage[official]{eurosym}
 
 \bibliography{Quellen}{}
@@ -70,21 +64,22 @@
 \newpage
 
 \include{eidesstattliche_erklaerung}
-
+\include{Vorwort}
 \include{abstract}
 
-\include{Vorwort}
 \setcounter{page}{1}
 \tableofcontents
-\input{Einleitung}
+
+\include{Einleitung}
 \include{Hauptteil}
-\input{Resuemee}
+\include{Resuemee}
 \printbibliography
 \listoffigures
 \listoftables
 \include{abkuerzungsverzeichnis}
+
 \appendix
-\input{Anhang}
+\include{Anhang}
 \include{Begleitprotokoll}
 
 \end{document}

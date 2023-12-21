@@ -22,7 +22,6 @@ openright,
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \linespread {1.25}
-\RequirePackage{mathptmx}
 \RequirePackage{calc}
 \RequirePackage{url}
 \RequirePackage[ngerman]{babel}
@@ -45,6 +44,11 @@ openright,
 \usepackage{lipsum}
 \usepackage{csvsimple}
 \usepackage[noend]{algpseudocode}
+
+% Schriftart
+%\usepackage{libertine}
+%\usepackage{ebgaramond}
+%\usepackage{mathptmx}
 
 \usepackage[ngerman]{varioref} % 1.
 \usepackage{hyperref}% 2.
@@ -83,8 +87,7 @@ openright,
 
 % Page number
 \usepackage{scrlayer-scrpage}
-\rofoot*{\pagemark}
-\cofoot*{}
+\cfoot*{\pagemark}
 \pagestyle{scrheadings}
 
 \pagestyle{empty}
@@ -123,9 +126,12 @@ openright,
   \begin{center}
   	\includegraphics[]{\@schullogo}
   \end{center}
- \begin{tabular}{ll}
-	\ifthenelse{\boolean{betreuerFemale}}{Betreuerin}{Betreuer}: & \@supervisor \\
-	\multicolumn{2}{l}\@schuljahr \\
-	Eingereicht am \@submitdate \\
-\end{tabular}
+% \begin{tabular}{ll}
+	\begin{center}
+	\textbf{\ifthenelse{\boolean{betreuerFemale}}{Betreuerin}{Betreuer}: \@supervisor} \\
+	\@schuljahr \\
+	Eingereicht am \@submitdate
+	\end{center}
+	
+%\end{tabular}
 }
